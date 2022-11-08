@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task4</title>
+</head>
+<body>
+    <label for="pass">Password (min 6 characters):</label>
+    <input type="password" name="pass" id="pass" value="password" onchange="mypass()">
+    <p id="p1" style="display: none;"></p>
+    <br>
+
+    <label for="password"> Repeat Password:</label>
+    <input type="password" name="password" id="password" value="password" onchange="mypassword()">
+    <p id="p2" style="display: none;"></p>
+<br>
+<input type="submit" name="submit" id="submit" value="submit" style="display: none;">
+
+
+<script>
+
+function mypass(){
+    let x= document.getElementById("pass").value;
+let y= document.getElementById("password").value;
+
+    if(x.length<6){
+    document.getElementById("p1").style.display="inline";
+    document.getElementById("p1").innerHTML="too short";
+    document.getElementById("p1").style.color="red";
+}
+else 
+document.getElementById("p1").style.display="none";
+}
+
+function mypassword(){
+    let x= document.getElementById("pass").value;
+let y= document.getElementById("password").value;
+if (x == y){
+    document.getElementById("submit").style.display="block" ;
+}
+else 
+document.getElementById("p2").style.display="inline";
+document.getElementById("p2").innerHTML="the two passwords dont match";
+document.getElementById("p2").style.color="red";
+
+
+}
+
+</script>
+</body>
+</html>

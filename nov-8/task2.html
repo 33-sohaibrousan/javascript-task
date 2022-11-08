@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task2</title>
+</head>
+<body>
+    <select id="flagname" name="flagname" onchange="myflag()">
+        <option value="jordan">jordan</option>
+        <option value="Italy">Italy</option>
+        <option value="canada">canada</option>
+        <option value="argentine">argentine</option>
+        <option value="british">british</option>
+</select>
+<br>
+<br>
+<img id="image" src="jordan.png">
+<script>
+    
+
+
+
+
+function myflag(){
+    var img = document.getElementById("flagname").value;
+    if (img =="jordan"){
+        document.getElementById("image").src="jordan.png"; 
+    }
+    else if(img =="Italy"){
+        document.getElementById("image").src="italy.png";
+    }
+    else if (img =="canada"){
+        document.getElementById("image").src="canada.png"
+    }
+    else if (img =="argentine"){
+        document.getElementById("image").src="argentine.png"
+}
+else if (img =="british"){
+        document.getElementById("image").src="british.png"
+}
+}
+
+
+
+
+
+</script>
+</body>
+</html>

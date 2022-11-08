@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task3</title>
+</head>
+<body>
+    <div >
+    <select id="font-family" name="font-family" onchange="myfont()">
+        <option value="Serif">serif</option>
+        <option value="Cursive">Cursive</option>
+        <option value="monospace">Monospace</option>
+        
+</select>
+
+<select id="font-size" name="font-size" onchange="mysize()">
+    <option value="12px">12px</option>
+    <option value="16px">16px</option>
+    <option value="20px">20px</option>
+    
+</select>
+<label for="italic">Italic</label>
+<input type="checkbox" id="italic" name="font" value="italic" onchange="italic()" >
+<label for="bold">Bold</label>
+<input type="checkbox" id="bold" name="font" value="bold" onchange="bold()">
+<label for="underline">Underline</label>
+<input type="checkbox" id="underline" name="font" value="underline" onchange="underline()">
+
+<p id="par" style="border: 2px solid black; width:400px; height:100px; ">the orange academy wants to kill me</p>
+
+
+</div>
+<script>
+    function myfont(){
+        var x=  document.getElementById("font-family").value;
+       if(x=="Serif"){
+        document.getElementById("par").style.fontFamily="Georgia";
+    }
+    else if(x=="Cursive"){
+        document.getElementById("par").style.fontFamily="Cursive";
+    }
+    else if(x=="monospace"){
+        document.getElementById("par").style.fontFamily="Courier New";
+    }
+    }
+
+    function mysize(){
+        var x=document.getElementById("font-size").value;
+        if(x=="12px"){
+            document.getElementById("par").style.fontSize="12px";
+        }
+        else if(x=="16px"){
+            document.getElementById("par").style.fontSize="16px";
+        }
+        else if (x=="20px"){
+            document.getElementById("par").style.fontSize="20px";
+        }
+}
+function italic(){
+            var x=document.getElementById("italic").value;
+            if (x=="italic"){
+            document.getElementById("par").style.fontStyle="italic";
+            }
+        }
+        function bold(){
+            var x=document.getElementById("bold").value;
+            if (x=="bold"){
+            document.getElementById("par").style.fontWeight="bold";
+            }
+        }
+        function underline(){
+            var x=document.getElementById("underline").value;
+            if (x=="underline"){
+            document.getElementById("par").style.textDecoration="underline";
+            }
+        }
+</script>
+</body>
+</html>
