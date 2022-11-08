@@ -1,9 +1,10 @@
-let x=8;
+let x=5;
 let y=9;
 function largestNumber (x,y){
+    let max ;
     if(x>y){
         
-        let max=x;
+         max=x;
         }
         else{
             max=y;
