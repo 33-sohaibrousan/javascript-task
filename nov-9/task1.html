@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task1</title>
+</head>
+<body>
+    <form>
+        <label for="name">Name :</label>
+        <input id="name2" type="text"><br>
+         <label for="age">Age :</label>
+        <input id="age" name="age" type="number"><br>
+        <label for="gender">Gender :</label>
+        <label for="male">male </label>
+        <input id="male" value="male" type="radio" name="male">
+        <label for="female">female </label>
+        <input id="female" value="female" type="radio" name="male"><br>
+        <label for="brief">Brief Description:</label>
+        <input id="brief" name="brief" type="text"><br>
+        <label for="edu">Education :</label>
+        <input id="edu" name="edu" type="text"><br>
+       
+        <label for="lang">Programming Language  :</label>
+        <label for="html">html </label>
+        <input id="html" value="html" type="checkbox" name="html">
+        <label for="css">Css </label>
+        <input id="css" value="css" type="checkbox" name="css">
+        <label for="js">Java script </label>
+        <input id="js" value="js" type="checkbox" name="js"><br> 
+
+        <input type="button" value="submit" id="submit3" onclick="mybox()">
+    </form>
+        
+         <div class="box" style="width:300px ;border:2px solid black;display:none;">
+            <div class="container">
+<label>name :</label>
+<span id="bname"></span><br>
+<label>age :</label>
+<span id="bage"></span><br>
+<label>brief :</label>
+<span id="bbrief"></span><br>
+<label>education :</label>
+<span id="bedu"></span><br>
+<label>programming language :</label>
+<span id="blang"></span><br>
+<label>gender :</label>
+<span id="bgender"></span><br>
+
+            </div>
+          </div> 
+          <div id="mydiv">
+            <p id="firstnamecard"></p>
+            <p id="youragecard"></p>
+            <p id="gendercard"></p>
+            <p id="landue"></p>
+            <p id="briefcard"></p>
+            <p id="universitycard"></p>
+    
+          </div>
+
+        <script>
+function mybox(){
+    // document.getElementById("box").style.display="block";
+    // document.getElementById("box").style.border="3px solid black";
+
+var name1 = document.getElementById("name2").value;
+ localStorage.setItem('name',name1);
+
+
+
+document.getElementById("firstnamecard").innerHTML="My Name Is "+localStorage.getItem("name");
+let age = document.getElementById("age").value;
+localStorage.setItem("age",age);
+localStorage.getItem("age");
+document.getElementById("youragecard").innerHTML+="im "+age + " Years Old";
+let brief = document.getElementById("brief").value;
+localStorage.setItem("brief",brief);
+localStorage.getItem("brief");
+document.getElementById("briefcard").innerHTML+=brief;
+
+
+let edu = document.getElementById("edu").value;
+localStorage.setItem("edu",edu);
+localStorage.getItem("edu");
+document.getElementById("bedu").innerHTML+=bedu;
+
+let gand2 = document.getElementsByName('male');
+              let gendercard2;
+            for(i = 0; i < gand2.length; i++) {
+                if(gand2[i].checked)
+                gendercard2 = gand2[i].value;
+                localStorage.setItem('gender',gendercard2);
+              
+            }
+   document.getElementById("gendercard").innerHTML="im "+localStorage.getItem("gender");
+
+
+            
+
+// let gender ;
+// if(document.getElementById("male").checked){
+//     gender+=document.getElementById("male").value;
+// }
+// else(document.getElementById("female").checked){
+//     gender+=document.getElementById("female").value;
+// }
+// localStorage.setItem("gender",gender);
+// localStorage.getItem("gender");
+// document.getElementById("bgender").innerHTML+=gender;
+
+
+
+ let lang = [];
+if(document.getElementById("html").checked){
+    lang+=document.getElementById("html").value;
+}
+if(document.getElementById("css").checked){
+    lang+=document.getElementById("css").value;
+    
+}
+if(document.getElementById("js").checked){
+    lang+=document.getElementById("js").value;
+}
+
+localStorage.setItem("lang",lang);
+document.getElementById("landue").innerHTML="my prefferd languages are  "+localStorage.getItem("lang");
+
+
+}
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+        </script>
+
+
+
+
+
+
+
+
+ 
+
+  
+</body>
+</html>

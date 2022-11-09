@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task2</title>
+</head>
+<body>
+    <label for="sub">Subject:</label><br>
+    <input type="text" id="subject" name="" value="" ><br><br>
+
+    <label for="desc"> Description:</label>
+    <br>
+    <textarea id="desc" name="Description" rows="4" cols="50" >
+    </textarea><br><br>
+     
+<label for="user">User Types:</label>
+<br>
+<textarea id="user" name="user" rows="5" cols="50" ">
+</textarea><br><br>
+
+   
+    
+<label for="tec">Technology used:</label>
+<br>
+<textarea id="tec" name="tec" rows="4" cols="50" ></textarea><br><br>
+<button type="submit" value="submit" onclick="mymaster()">submit</button><br><br>
+
+<div style=" background-color:aqua ; width:400px ; height:300px ; border:2px solid black; display:none;" id="box">
+    <p id="p1">Subject: </p>
+    <p id="p2">Description: </p>
+    <p id="p3">User Types: </p>
+    <p id="p4">Technology used: </p>
+ 
+  </div>
+
+  <script>
+
+function mymaster()
+{
+
+    sessionStorage.setItem("subject" ,document.getElementById("subject").value);
+    let subject=sessionStorage.getItem("subject");
+
+    sessionStorage.setItem("Description",document.getElementById("desc").value);
+    let dascription=sessionStorage.getItem("Description");
+
+    sessionStorage.setItem("userTypes",document.getElementById("user").value);
+    let userTypes=sessionStorage.getItem("userTypes");
+
+
+    sessionStorage.setItem("Technology" ,document.getElementById("tec").value);
+    let Technology=sessionStorage.getItem("Technology");
+
+document.getElementById("box").style.display="block";
+
+document.getElementById("p1").innerHTML+= subject;
+document.getElementById("p2").innerHTML+= dascription;
+document.getElementById("p3").innerHTML+= userTypes;
+document.getElementById("p4").innerHTML+= Technology;
+
+}
+  </script>
+</body>
+</html>
