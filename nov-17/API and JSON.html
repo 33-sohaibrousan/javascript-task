@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display: flex; width:200px;"  onchange="characters()">
+    <h1 id="name"></h1>
+    <img style="width:150px;" id="img" >
+</div>
+    <script>
+        // https://www.breakingbadapi.com/api/characters
+        
+        async  function characters(){
+            const data = await fetch(" https://www.breakingbadapi.com/api/characters");
+            console.log(data);
+            const info=await data.json();
+            console.log(info)
+            // document.getElementById("name").innerHTML=info[0].name;
+            // document.getElementById("img").src=info[0].img;
+            for(i=0;i<info.length;i++){
+                document.write("name is"+"<h1>"+info[i].name+"</h1>");
+                document.write("<img width='250px' src=  " + info[i].img + ">");
+
+            }
+            
+    }
+    characters();
+   
+    </script>
+</body>
+</html>

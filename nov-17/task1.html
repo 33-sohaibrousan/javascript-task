@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task1</title>
+</head>
+<style>
+    img {
+        width: 300px;
+        height: 300px;
+        display: block;
+    }
+</style>
+<body>
+    <div class="name">
+        <select name="name" id="name" value="" onchange="change(this)">
+            <!-- <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option> -->
+
+        </select>
+        <br>
+        <img src="" id="image"> 
+    </div>
+<script>
+    let info ; 
+    async function information(){
+        let data= await  fetch(" https://www.breakingbadapi.com/api/characters");
+        info =  await data.json();
+        console.log(data);
+        console.log(info); 
+        await create();
+        
+    }
+
+    function create(){
+        const select = document.getElementById("name");
+        let list = "";
+        for(i=0 ; i<info.length ; i++){
+        list += "<option value = " + info[i].img +">" +info[i].name+ "</option>" ;
+        
+
+        }
+
+        select.innerHTML = list ;
+    }
+
+    function change(selected){
+        let image = document.getElementById("image");
+        image.src = selected.value ;
+           
+    }
+    information();
+</script>
+</body>
+</html>
